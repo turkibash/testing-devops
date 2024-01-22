@@ -19,7 +19,6 @@ jobs:
           node-version: '20' # Use the Node.js version compatible with your project
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub token for publishing the release
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Uncomment if you publish to npm
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
