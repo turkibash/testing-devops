@@ -8,7 +8,7 @@
   <body>
     <h1 id="greeting">Loading...</h1>
     <script>
-      fetch('/')
+      fetch('/greet1')
         .then((response) => response.text())
         .then((text) => {
           document.getElementById('greeting').textContent = text;

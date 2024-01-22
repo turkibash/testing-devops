@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 // Handle the /greet endpoint
-app.get('/greet', (req, res) => {
+app.get('/greet1', (req, res) => {
   res.send(`Hello from Node.js App! Served by Pod: ${podName}`);
 });
 
