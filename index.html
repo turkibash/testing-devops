@@ -7,5 +7,13 @@
   </head>
   <body>
     <h1 id="greeting">Loading...</h1>
+    <script>
+      fetch('/greet')
+        .then((response) => response.text())
+        .then((text) => {
+          document.getElementById('greeting').textContent = text;
+        })
+        .catch((error) => console.error('Error fetching greeting:', error));
+    </script>
   </body>
 </html>
