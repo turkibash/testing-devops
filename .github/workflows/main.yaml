@@ -41,7 +41,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/turkibash/nodeapp:${{ github.sha }}
+          tags: ghcr.io/turkibash/nodeapp:v1
 
       - name: Set up Kubeconfig
         env:

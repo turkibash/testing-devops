@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nodeapp
-          image: ghcr.io/turkibash/nodeapp:latest
+          image: ghcr.io/turkibash/nodeapp:v1
           ports:
             - containerPort: 3003
           env:
