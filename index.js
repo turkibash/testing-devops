@@ -1,15 +1,20 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
-// Serve the greeting message
-app.get('/greet', (req, res) => {
-  res.send(`Hello from ${PORT}`);
+// Environment variable POD_NAME will be set by Kubernetes
+const podName = process.env.POD_NAME || 'Unknown';
+
+// Serve the HTML file
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html'); // Assuming your HTML file is named index.html
 });
 
-// Serve static files (for HTML, CSS, JS)
-app.use(express.static('public'));
+// Handle the /greet endpoint
+app.get('/greet', (req, res) => {
+  res.send(`Hello from Node.js App! Served by Pod: ${podName}`);
+});
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Node.js app listening at http://localhost:${port}`);
 });
