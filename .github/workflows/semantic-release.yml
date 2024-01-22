@@ -1,3 +1,7 @@
+branches:
+  - name: main
+  - name: develop
+
 plugins:
   - '@semantic-release/commit-analyzer'
   - '@semantic-release/release-notes-generator'
